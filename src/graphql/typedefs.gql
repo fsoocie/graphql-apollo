@@ -1,0 +1,33 @@
+type Geo {
+  lat: Float!
+  lng: Float!
+}
+
+type ClientAddress {
+  id: ID!
+  street: String!
+  suite: String!
+  city: String!
+  zipcode: String!
+  geo: Geo!
+}
+
+type ClientTodo {
+  id: ID!
+  title: String!
+  user: ClientUser
+}
+
+type ClientUser {
+  id: ID!
+  name: String
+  username: String
+  email: String
+  address: ClientAddress
+}
+
+type Query {
+  users: [ClientUser!]!
+  todos: [ClientTodos!]!
+  todo: ClientTodo!
+}

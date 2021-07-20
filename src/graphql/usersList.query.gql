@@ -1,0 +1,10 @@
+query usersList {
+  users @client {
+    id
+    name
+    address {
+      street
+      city
+    }
+  }
+}
